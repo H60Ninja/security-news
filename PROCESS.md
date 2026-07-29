@@ -20,6 +20,8 @@ So the daily process is an agent run, not a cron script: each run, the assistant
 
 3. **Filter to the lookback window.** Default lookback is since the last successful daily run (roughly 24 hours; use 48–72 hours for the first run of a new week to catch anything missed over a weekend gap). Discard anything older even if it's still on the homepage.
 
+   **Same-day re-run (a file for today's date already exists):** this happens when the task is manually triggered ("Run now") after the scheduled run already fired, or after the catalog/process itself was edited and someone wants to test the change same-day. Do not compute "the day after the most recent file's date" in this case — that produces a backwards or empty window. Instead: treat today's existing file as the starting point, use a short lookback (since that file was last written — check its content/mtime, or fall back to the last several hours) and **update it in place** rather than silently discarding it. Add a visible note near the top of the file, e.g. "Updated intraday at [time] — re-run to pick up newly added sources" or whatever the actual reason is, so it's clear the file was regenerated rather than left stale. Preserve anything from the earlier version that's still accurate; don't drop items just because the file is being rewritten.
+
 4. **Extract per item:** title, exact publish date, direct URL (the actual article/advisory permalink, not just the homepage), source name + tier, and a 2–3 sentence factual summary written from what was actually read — never inferred or filled in from the headline alone. Pull out CVE IDs, CVSS scores, and named threat actors/malware when present, since these are what make items scannable and searchable later.
 
 5. **Categorize** each item into one of:
