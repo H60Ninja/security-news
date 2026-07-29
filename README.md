@@ -9,6 +9,7 @@ security-news/
 ├── README.md                    — this file
 ├── METHODOLOGY.md                — how sources are scored (read this first)
 ├── PROCESS.md                    — how the daily digest actually gets built
+├── SCHEDULE.md                    — the scheduled task config (cron + prompt), so the automation itself is reproducible from this repo
 ├── sources/
 │   ├── catalog.md                — master index of every tracked source, sorted by score
 │   ├── vulnerability-advisories.md
@@ -29,7 +30,7 @@ security-news/
 
 3. **New sources get discovered, not just monitored.** When research turns up a credible source not yet in the catalog, it's logged in `sources/candidates.md` and scored against the same rubric before being promoted — the source list is expected to grow over time, not stay fixed.
 
-4. **This runs on a schedule.** A recurring scheduled task triggers the daily process each morning; see the task list in this workspace (or ask to check/update it) for the current schedule.
+4. **This runs on a schedule.** A recurring scheduled task triggers the daily process each morning. The live trigger is registered in Cowork's own scheduling system (not stored in this repo), but `SCHEDULE.md` documents its exact configuration so it can be re-registered on a new machine or session without reverse-engineering anything.
 
 ## Where to start
 
