@@ -15,9 +15,11 @@ All tracked sources, sorted by overall score. Full rationale and metadata for ea
 | 4.2 | 1 | [Cisco Talos](threat-intel-research.md#cisco-talos-intelligence-blog) | Threat Intel | Vendor research |
 | 4.2 | 1 | [Palo Alto Unit 42](threat-intel-research.md#palo-alto-networks-unit-42) | Threat Intel | Vendor research |
 | 4.2 | 1 | [Google TIG / Mandiant](threat-intel-research.md#google-threat-intelligence-group--mandiant-blog) | Threat Intel | Vendor research |
+| 4.2 | 1 | [Defensive Security Podcast](news-analysis.md#defensive-security-podcast) | News & Analysis | Independent podcast |
 | 4.0 | 1 | [BleepingComputer](news-analysis.md#bleepingcomputer) | News & Analysis | Aggregator + original |
 | 4.0 | 1 | [Microsoft Security Blog / MSTIC](threat-intel-research.md#microsoft-security-blog--mstic) | Threat Intel | Vendor research |
 | 4.0 | 1 | [GitHub Security Lab](open-source-projects.md#github-security-lab) | Open Source | Vendor/platform research |
+| 4.0 | 1 | [Daily DefSec Brief](news-analysis.md#daily-defsec-brief-podcastyoutube) | News & Analysis | Independent podcast/video |
 | 3.8 | 2 | [Dark Reading](news-analysis.md#dark-reading) | News & Analysis | Trade press |
 | 3.8 | 2 | [OpenSSF Blog](open-source-projects.md#openssf-open-source-security-foundation-blog) | Open Source | Standards/foundation |
 | 3.6 | 2 | [The Hacker News](news-analysis.md#the-hacker-news) | News & Analysis | Aggregator |
@@ -27,4 +29,4 @@ All tracked sources, sorted by overall score. Full rationale and metadata for ea
 
 **Category files:** [vulnerability-advisories.md](vulnerability-advisories.md) · [news-analysis.md](news-analysis.md) · [threat-intel-research.md](threat-intel-research.md) · [open-source-projects.md](open-source-projects.md)
 
-**Totals:** 14 Tier 1 sources, 6 Tier 2 sources, 0 Tier 3, across 4 categories (20 distinct sources; OSV.dev is cross-listed under two categories). Last full review: 2026-07-28.
+**Totals:** 16 Tier 1 sources, 6 Tier 2 sources, 0 Tier 3, across 4 categories (22 distinct sources; OSV.dev is cross-listed under two categories). Last full review: 2026-07-28. Note: Daily DefSec Brief is flagged for early re-review around 2026-10-28 given its short track record — see its entry in `news-analysis.md`.

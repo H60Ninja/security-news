@@ -11,3 +11,9 @@ Format per entry: name, URL, why it was flagged, date flagged, status.
 - **Why flagged:** New infrastructure/firmware/edge-device vulnerability knowledge base plus a monthly "InfraTrust Pulse" prioritization report from Eclypsium, surfaced in daily research on 2026-07-28. Firmware/infrastructure vulnerabilities are a gap in the current catalog (existing sources skew OS/application/cloud).
 - **Date flagged:** 2026-07-28
 - **Status:** Not yet scored — needs its own review against `../METHODOLOGY.md` (independence is a real question, since Eclypsium is a commercial vendor selling into this exact space) before promotion to a category file.
+
+### Risky Business News (news.risky.biz)
+- **URL:** https://news.risky.biz/
+- **Why flagged:** Cited repeatedly as a primary source in Daily DefSec Brief's show notes (e.g. the July 27 episode's lead item on a Fastjson RCE bug). Risky Business is a long-running, well-regarded independent security news operation (podcast + newsletter), not currently in the catalog — likely a real gap rather than noise, since it's being cited by a source we already trust.
+- **Date flagged:** 2026-07-28
+- **Status:** Not yet scored — needs a proper pass against `../METHODOLOGY.md` (check update cadence, fetch method, and independence/ownership) before promotion to `news-analysis.md`.
