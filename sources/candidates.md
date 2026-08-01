@@ -47,3 +47,9 @@ Format per entry: name, URL, why it was flagged, date flagged, status.
 - **Why flagged:** Original discloser of the OpenSSL "HollowByte" denial-of-service research (an 11-byte TLS payload that can exhaust server memory), originally published June 2026 and re-surfaced in a wave of secondary coverage this run (excluded from the 2026-07-31 digest as recycled coverage of an old story — see that file's Run Notes). Original vendor security research not currently in the catalog.
 - **Date flagged:** 2026-07-31
 - **Status:** Not yet scored — needs a pass against `../METHODOLOGY.md` (Okta is a commercial identity vendor; independence and update cadence both need review) before promotion to `threat-intel-research.md`.
+
+### Kevin Beaumont / DoublePulsar (doublepulsar.com)
+- **URL:** https://doublepulsar.com/
+- **Why flagged:** Independent security researcher who first surfaced the Adform ad-tech supply-chain compromise (trojanized `trackpoint-async.js` script hijacking cryptocurrency clipboard contents across ~14,000 customer sites), surfaced in daily research on 2026-08-01. His original writeup was cited as the primary source by BleepingComputer, The Hacker News, and multiple secondary outlets rather than just republished — a well-known, identifiable independent researcher (formerly of Microsoft, long public track record covering incidents like WannaCry).
+- **Date flagged:** 2026-08-01
+- **Status:** Not yet scored — needs a pass against `../METHODOLOGY.md` (check update cadence and whether WebFetch renders doublepulsar.com's Medium-hosted posts) before promotion to `threat-intel-research.md` or `news-analysis.md`.
