@@ -32,7 +32,7 @@ General-interest security journalism — breaches, incidents, investigations, in
 - **URL:** https://www.darkreading.com/ · Feed: https://www.darkreading.com/rss.xml
 - **Type:** Trade press / industry analysis
 - **Update cadence:** Multiple posts daily
-- **Fetch method:** WebFetch the homepage
+- **Fetch method:** WebSearch scoped to `darkreading.com` — **the site returns `HTTP 403 Forbidden` to WebFetch** as of 2026-07-31, on both the homepage and article URLs. This is a per-site block, not an environment problem (see `../PROCESS.md` step 2). Because search summaries can't supply a publish date off the page itself, items from this source need the dedicated date-targeted query described in `../PROCESS.md` step 4 before inclusion.
 - **Scores:** Reliability 4 / Timeliness 3 / Signal-to-noise 4 / Technical depth 4 / Independence 4 → **Overall 3.8 — Tier 2**
 - **Rationale:** Stronger on analysis and enterprise-security context than breaking news speed; good corroborating source for why an event matters, not usually first to report it.
 
