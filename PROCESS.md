@@ -8,6 +8,8 @@ The obvious design would be a script that pulls each source's RSS feed on a cron
 
 So the daily process is an agent run, not a cron script: each run, the assistant works through the catalog and fetches each source's human-readable page, not its raw feed.
 
+Note the scope of that argument: it rules out scripting the *research*, because research needs network access this environment only grants through the assistant's tools. It says nothing about steps that are pure local transforms. Rendering a finished digest to HTML needs no network at all, so that one is a script — see "Rendering a digest to HTML" below.
+
 ## Steps
 
 1. **Load the catalog.** Read `sources/catalog.md` for the full source list, and pull Tier 1 sources every run; pull Tier 2 sources every run as well unless they've been silent for several consecutive days (then check less frequently — use judgment, not a hard rule).
@@ -71,6 +73,22 @@ So the daily process is an agent run, not a cron script: each run, the assistant
    Two things follow from writing exclusions down. A reviewer gets something to check, which is the whole point. And a run that has to name its evidence in public tends to notice when it doesn't have any — the 2026-07-31 TeamCity exclusion was written out in full prose and still went unchallenged, but it was written as a conclusion rather than as a claim with its provenance attached.
 
 10. **Never fabricate.** If nothing new came from a source, say "no new items" rather than padding the digest. If a claim can't be traced to a specific fetched page, it doesn't go in the digest. This applies to URLs too: always copy a link verbatim from the page or search result you actually retrieved. Never hand-construct or shorten a URL from memory (e.g. guessing the path structure from other similar URLs seen in the same batch) — a plausible-looking URL that wasn't copied directly is exactly the kind of thing that quietly 404s.
+
+## Rendering a digest to HTML
+
+`tools/digest2html.py` turns any `daily/YYYY-MM-DD.md` into a standalone HTML page — no dependencies beyond the Python 3 standard library, no network access, nothing to install:
+
+```
+python3 tools/digest2html.py daily/2026-07-31.md     # writes daily/2026-07-31.html
+python3 tools/digest2html.py --latest                # renders the newest digest
+python3 tools/digest2html.py --latest --stdout       # pipe it somewhere instead
+```
+
+Markdown is the source of truth; the HTML is a disposable view and is gitignored. Regenerate it, don't edit it.
+
+The renderer reads the structure `daily/TEMPLATE.md` defines rather than parsing markdown generically, which lets the page carry distinctions the markdown can only imply: a severity stripe per item, provenance notes rendered as visible callouts rather than inline prose, and the "no new items" and candidates sections laid out as source ledgers. That matters most for carried-over items — in HTML they are visually marked as not re-verified this run, so they can't be mistaken for freshly confirmed reporting.
+
+Severity comes from an optional `**Severity:**` field in an item's metadata line (`exploited`, `critical`, `elevated`, `info`, `carried`). When the field is absent it's inferred from wording — KEV mentions, CVSS values, provenance notes. The inference is a convenience and it is occasionally wrong, so set the field explicitly on anything where the distinction matters.
 
 ## Scheduling
 

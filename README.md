@@ -17,9 +17,11 @@ security-news/
 │   ├── threat-intel-research.md
 │   ├── open-source-projects.md
 │   └── candidates.md             — sources discovered but not yet scored/promoted
-└── daily/
-    ├── TEMPLATE.md                — template for new daily digests
-    └── YYYY-MM-DD.md              — one file per day
+├── daily/
+│   ├── TEMPLATE.md                — template for new daily digests
+│   └── YYYY-MM-DD.md              — one file per day
+└── tools/
+    └── digest2html.py             — render a digest to a standalone HTML page
 ```
 
 ## How it works
@@ -35,6 +37,7 @@ security-news/
 ## Where to start
 
 - Want to see the current state of security news? Open the most recent file in `daily/`.
+- Prefer reading it as a web page? `python3 tools/digest2html.py --latest` writes a standalone HTML view next to the markdown — severity-striped items, provenance callouts, light and dark themes, no dependencies and no network access. Markdown stays the source of truth; the HTML is generated and gitignored. See "Rendering a digest to HTML" in `PROCESS.md`.
 - Want to know why a source is or isn't trusted? Check its entry in the relevant `sources/*.md` file.
 - Want to add a source? Score it against `METHODOLOGY.md`, add it to the right category file, then update `sources/catalog.md`.
 - Want to change how the daily digest is built? Edit `PROCESS.md` — the scheduled task prompt points at this file directly, so changes take effect on the next run.

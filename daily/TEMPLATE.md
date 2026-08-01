@@ -34,9 +34,18 @@ Structure notes:
 ## Critical Vulnerabilities & Advisories
 
 ### [Title]
-**Source:** [Name (Tier)](URL) · **Published:** [date] · **CVE:** [[CVE-XXXX-XXXXX](https://nvd.nist.gov/vuln/detail/CVE-XXXX-XXXXX) if applicable] · **CVSS:** [if applicable]
+**Source:** [Name (Tier)](URL) · **Published:** [date] · **CVE:** [[CVE-XXXX-XXXXX](https://nvd.nist.gov/vuln/detail/CVE-XXXX-XXXXX) if applicable] · **CVSS:** [if applicable] · **Severity:** [optional — see below]
 
 [2-3 sentence factual summary]
+
+<!--
+`**Severity:**` is optional and affects only the HTML view produced by tools/digest2html.py
+(it is dropped from the rendered metadata line, so it never shows up as visible text).
+Values: exploited | critical | elevated | info | carried
+Omit it and the renderer infers a severity from wording; set it explicitly wherever the
+distinction matters. Use `carried` for an item kept from a previous version of the same
+file that could not be re-verified this run.
+-->
 
 ## Active Threats & Incidents
 

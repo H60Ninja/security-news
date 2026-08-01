@@ -1,1 +1,5 @@
 tmp/
+__pycache__/
+
+# Generated views — regenerate with tools/digest2html.py, never edit by hand
+daily/*.html
